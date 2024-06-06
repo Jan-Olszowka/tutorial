@@ -11,10 +11,6 @@
   "branchNameStrict": true,
   "packageRules": [
     {
-      "enabled": false,
-      "matchPackagePatterns": ["*"]
-    },
-    {
       "matchUpdateTypes": ["major"],
       "addLabels": ["major"]
     },
