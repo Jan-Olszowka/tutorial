@@ -24,13 +24,10 @@
     },
     {
       "matchUpdateTypes": ["patch"],
-      "addLabels": ["patch"]
-    },
-    {
-      "matchUpdateTypes": ["patch"],
-      "matchConfidence": ["very high", "high"],
-      "addLabels": ["auto merge test"]
-   }
+      "addLabels": ["patch", "auto-merged"],
+      "automerge": true,
+      "automergeType": "pr"
+    }
   ],
   "vulnerabilityAlerts": {
     "enabled": true
