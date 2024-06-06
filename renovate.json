@@ -1,13 +1,40 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:recommended"
-  ],
-  "prHourlyLimit": 3,
+      "config:recommended", 
+      "mergeConfidence:all-badges",
+      ":gitSignOff",
+      ":automergeRequireAllStatusChecks"
+    ],
+  "labels": ["whitesource"],
+  "transitiveRemediation": true,
+  "branchNameStrict": true,
   "packageRules": [
     {
+      "enabled": false,
+      "matchPackagePatterns": ["*"]
+    },
+    {
       "matchUpdateTypes": ["major"],
-      "dependencyDashboardApproval": true
-    }
-  ]
+      "addLabels": ["major"]
+    },
+    {
+      "matchUpdateTypes": ["minor"],
+      "addLabels": ["minor"]
+    },
+    {
+      "matchUpdateTypes": ["patch"],
+      "addLabels": ["patch"]
+    },
+    {
+      "matchUpdateTypes": ["patch"],
+      "matchConfidence": ["very high", "high"],
+      "addLabels": ["auto merge test"]
+   }
+  ],
+  "vulnerabilityAlerts": {
+    "enabled": true
+  },
+  "osvVulnerabilityAlerts": true,
+  "branchPrefix": "whitesource-remediate-"
 }
