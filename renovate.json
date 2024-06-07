@@ -9,6 +9,10 @@
   "labels": ["dependecy update"],
   "transitiveRemediation": true,
   "branchNameStrict": true,
+  "automergeType": "pr",
+  "automergeStrategy": "squash",
+  "platformAutomerge": true,
+  "separateMultipleMajor": true,
   "packageRules": [
     {
       "matchUpdateTypes": ["major"],
@@ -26,9 +30,6 @@
       "matchUpdateTypes": ["patch", "minor"],
       "addLabels": ["auto-merged"],
       "automerge": true,
-      "automergeType": "pr",
-      "automergeStrategy": "squash",
-      "autoApprove": true
     }
   ],
   "vulnerabilityAlerts": {
