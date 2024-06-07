@@ -7,12 +7,11 @@
         ":automergeRequireAllStatusChecks"
   ],
   "labels": ["dependecy update"],
-  "printConfig": true,
   "transitiveRemediation": true,
-  "branchNameStrict": true,
   "prHourlyLimit": 0,
   "prCreation": "immediate",
   "automergeType": "pr",
+  "automergeStrategy": "squash",
   "platformAutomerge": true,
   "packageRules": [
     {
@@ -38,5 +37,7 @@
   },
   "osvVulnerabilityAlerts": true,
   "branchPrefix": "whitesource-remediate-",
-  "timezone": "Europe/Warsaw"
+  "branchNameStrict": true,
+  "timezone": "Europe/Warsaw",
+  "printConfig": true
 }
