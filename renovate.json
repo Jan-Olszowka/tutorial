@@ -6,7 +6,7 @@
         ":gitSignOff",
         ":automergeRequireAllStatusChecks"
   ],
-  "labels": ["whitesource"],
+  "labels": ["dependecy update"],
   "transitiveRemediation": true,
   "branchNameStrict": true,
   "packageRules": [
@@ -20,9 +20,15 @@
     },
     {
       "matchUpdateTypes": ["patch"],
-      "addLabels": ["patch", "auto-merged"],
+      "addLabels": ["patch"]
+    },
+    {
+      "matchUpdateTypes": ["patch", "minor"],
+      "addLabels": ["auto-merged"],
       "automerge": true,
-      "automergeType": "pr"
+      "automergeType": "pr",
+      "automergeStrategy": "squash",
+      "autoApprove": true
     }
   ],
   "vulnerabilityAlerts": {
